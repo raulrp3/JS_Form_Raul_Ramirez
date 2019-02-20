@@ -37,12 +37,37 @@
 								<input type="text" class="form-control mb-1" id="textAddress">
 							</div>
 							<div class="col md-3">
-								<label for="selectCountry">Prueba</label>
+								<label for="selectCountry">País:</label>
 								<select name="" id="selectCountry" class="custom-select mb-1">
-									<option selected="true">Elige una opción...</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
+									<option selected="true">Selecciona una país...</option>
+									<option value="1">Alemania</option>
+									<option value="2">Austria</option>
+									<option value="3">Bélgica</option>
+									<option value="4">Bulgaria</option>
+									<option value="5">Chipre</option>
+									<option value="6">Croacia</option>
+									<option value="7">Dinamarca</option>
+									<option value="8">Eslovaquia</option>
+									<option value="9">Eslovenia</option>
+									<option value="10">España</option>
+									<option value="11">Estonia</option>
+									<option value="12">Finlandia</option>
+									<option value="13">Francia</option>
+									<option value="14">Grecia</option>
+									<option value="15">Hungría</option>
+									<option value="16">Irlanda</option>
+									<option value="17">Italia</option>
+									<option value="18">Lituania</option>
+									<option value="19">Letonia</option>
+									<option value="20">Luxemburgo</option>
+									<option value="21">Malta</option>
+									<option value="22">Países Bajos</option>
+									<option value="23">Polonia</option>
+									<option value="24">Portugal</option>
+									<option value="25">Reinno Unido</option>
+									<option value="26">República Checa</option>
+									<option value="27">Rumanía</option>
+									<option value="28">Suecia</option>
 								</select>
 							</div>
 						</div>
@@ -60,11 +85,11 @@
 							<div class="col md-4">
 								<label for="" class="d-block">Sexo:</label>
 								<div class="form-check form-check-inline mb-1">
-									<input type="radio" class="form-check-input" id="radioMale">
+									<input type="radio" class="form-check-input" id="radioMale" name="sex">
 									<label for="radioMale">Masculino</label>
 								</div>
 								<div class="form-check form-check-inline">
-									<input type="radio" class="form-check-input" id="radioFemale">
+									<input type="radio" class="form-check-input" id="radioFemale" name="sex">
 									<label for="radioFemale">Femenino</label>
 								</div>
 							</div>
@@ -75,14 +100,30 @@
 									<label for="checkEnglish">Inglés</label>
 								</div>
 								<div class="form-check form-check-inline">
-									<input type="checkbox" class="form-check-input" id="checkNon">
-									<label for="checkNon">No Inglés</label>
+									<input type="checkbox" class="form-check-input" id="checkItaly">
+									<label for="checkItaly">Italiano</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input type="checkbox" class="form-check-input" id="checkFrench">
+									<label for="checkFrench">Francés</label>
 								</div>
 							</dic>
 						</div>
 						<div class="form-row">
 							<div class="col">
-								<label for="">Comentarios:</label>
+								<label for="textareaComments">Comentarios:</label>
+								<textarea name="" id="textareaComments" cols="30" rows="10" class="form-control"></textarea>
+							</div>
+						</div>
+						<div class="form-row mt-3">
+							<div class="col md-4">
+								<p></p>
+							</div>
+							<div class="col md-4">
+								<button type="submit" class="btn btn-success btn-lg btn-block">GUARDAR</button>
+							</div>
+							<div class="col md-4">
+								<p></p>
 							</div>
 						</div>
 					</form>
