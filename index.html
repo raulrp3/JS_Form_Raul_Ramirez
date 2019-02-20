@@ -3,8 +3,95 @@
 <head>
 	<meta charset="UTF-8">
 	<title>FORMULARIO</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<style>
+		.bg-primary{
+			background-color: red;
+		}
+	</style>
 </head>
 <body>
-	
+	<div class="container mt-3">
+		<div class="row justify-content-md-center">
+			<div class="col p-1 bg-light shadow p-3 mb-5 rounded">
+				<h3 class="text-center text-success border-bottom border-success p-1">FORMULARIO DE REGISTRO</h3>
+				<div class="col mt-2">
+					<form action="#">
+						<div class="form-row">
+							<div class="col md-4">
+								<label for="textId">ID Usuario:</label>
+								<input type="text" class="form-control mb-1" id="textId">
+							</div>
+							<div class="col md-4">
+								<label for="">Contraseña:</label>
+								<input type="text" class="form-control mb-1" id="textPassword">
+							</div>
+							<div class="col md-4">
+								<label for="">Nombre:</label>
+								<input type="text" class="form-control mb-1" id="textName">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col md-6">
+								<label for="">Dirección:</label>
+								<input type="text" class="form-control mb-1" id="textAddress">
+							</div>
+							<div class="col md-3">
+								<label for="selectCountry">Prueba</label>
+								<select name="" id="selectCountry" class="custom-select mb-1">
+									<option selected="true">Elige una opción...</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col">
+								<label for="textEmail">Email:</label>
+								<input type="text" class="form-control mb-1" id="textEmail">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col md-4">
+								<label for="textZip">Código ZIP:</label>
+								<input type="text" class="form-control mb-1" id="textZip">
+							</div>
+							<div class="col md-4">
+								<label for="" class="d-block">Sexo:</label>
+								<div class="form-check form-check-inline mb-1">
+									<input type="radio" class="form-check-input" id="radioMale">
+									<label for="radioMale">Masculino</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input type="radio" class="form-check-input" id="radioFemale">
+									<label for="radioFemale">Femenino</label>
+								</div>
+							</div>
+							<dic class="col md-4">
+								<label for="" class="d-block">Idioma:</label>
+								<div class="form-check form-check-inline mb-1">
+									<input type="checkbox" class="form-check-input" id="checkEnglish">
+									<label for="checkEnglish">Inglés</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input type="checkbox" class="form-check-input" id="checkNon">
+									<label for="checkNon">No Inglés</label>
+								</div>
+							</dic>
+						</div>
+						<div class="form-row">
+							<div class="col">
+								<label for="">Comentarios:</label>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </body>
 </html>
