@@ -16,19 +16,28 @@
 			<div class="col p-1 bg-light shadow p-3 mb-5 rounded">
 				<h3 class="text-center text-success border-bottom border-success p-1">FORMULARIO DE REGISTRO</h3>
 				<div class="col mt-2">
-					<form action="#">
+					<form action="#" id="form">
 						<div class="form-row">
 							<div class="col md-4">
 								<label for="textId">ID Usuario:</label>
-								<input type="text" class="form-control mb-1" id="textId">
+								<input type="text" class="form-control mb-1 required" id="textId">
+								<div class="alert alert-danger text-center mt-1 required" id="alertId">
+									
+								</div>
 							</div>
 							<div class="col md-4">
-								<label for="">Contraseña:</label>
-								<input type="text" class="form-control mb-1" id="textPassword">
+								<label for="textPassword">Contraseña:</label>
+								<input type="text" class="form-control mb-1 required" id="textPassword">
+								<div class="alert alert-danger text-center mt-1 required" id="alertPassword">
+									
+								</div>
 							</div>
 							<div class="col md-4">
 								<label for="">Nombre:</label>
-								<input type="text" class="form-control mb-1" id="textName">
+								<input type="text" class="form-control mb-1 required" id="textName">
+								<div class="alert alert-danger text-center mt-1 required" id="alertName">
+									
+								</div>
 							</div>
 						</div>
 						<div class="form-row">
@@ -39,7 +48,7 @@
 							<div class="col md-3">
 								<label for="selectCountry">País:</label>
 								<select name="" id="selectCountry" class="custom-select mb-1">
-									<option selected="true">Selecciona una país...</option>
+									<option selected="true">Selecciona un país...</option>
 									<option value="1">Alemania</option>
 									<option value="2">Austria</option>
 									<option value="3">Bélgica</option>
@@ -69,18 +78,27 @@
 									<option value="27">Rumanía</option>
 									<option value="28">Suecia</option>
 								</select>
+								<div class="alert alert-danger text-center mt-1" id="alertCountry">
+									
+								</div>
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="col">
 								<label for="textEmail">Email:</label>
-								<input type="text" class="form-control mb-1" id="textEmail">
+								<input type="text" class="form-control mb-1 required" id="textEmail">
+								<div class="alert alert-danger text-center mt-1 required">
+									
+								</div>
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="col md-4">
 								<label for="textZip">Código ZIP:</label>
-								<input type="text" class="form-control mb-1" id="textZip">
+								<input type="text" class="form-control mb-1 required" id="textZip">
+								<div class="alert alert-danger text-center mt-1 required">
+									
+								</div>
 							</div>
 							<div class="col md-4">
 								<label for="" class="d-block">Sexo:</label>
@@ -91,6 +109,9 @@
 								<div class="form-check form-check-inline">
 									<input type="radio" class="form-check-input" id="radioFemale" name="sex">
 									<label for="radioFemale">Femenino</label>
+								</div>
+								<div class="alert alert-danger text-center mt-1">
+									
 								</div>
 							</div>
 							<dic class="col md-4">
@@ -107,6 +128,9 @@
 									<input type="checkbox" class="form-check-input" id="checkFrench">
 									<label for="checkFrench">Francés</label>
 								</div>
+								<div class="alert alert-danger text-center mt-1">
+									
+								</div>
 							</dic>
 						</div>
 						<div class="form-row">
@@ -120,7 +144,7 @@
 								<p></p>
 							</div>
 							<div class="col md-4">
-								<button type="submit" class="btn btn-success btn-lg btn-block">GUARDAR</button>
+								<button type="submit" class="btn btn-success btn-lg btn-block" id="btnSave">GUARDAR</button>
 							</div>
 							<div class="col md-4">
 								<p></p>
