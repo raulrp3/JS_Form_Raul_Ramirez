@@ -72,6 +72,7 @@ function validateZip(){
 }
 function submitForm(){
 	validateCountry();
+	validateLanguage();
 }
 
 function validateCountry(){
@@ -83,5 +84,20 @@ function validateCountry(){
 		selectCountry.classList.add("border-danger");
 		alertCountry.style.display = "block";
 		alertCountry.innerHTML = "Debes seleccionar un país";
+	}
+}
+
+function validateLanguage(){
+	let alertLanguage = document.getElementById("alertLanguage");
+	let checkLanguage = document.querySelectorAll("input[type = 'checkbox']");
+	let counter = 0;
+	for (let i = 0;i < checkLanguage.length;i++){
+		if (checkLanguage[i].checked){
+			counter++;
+		}
+	}
+	if (counter < 1){
+		alertLanguage.style.display = "block";
+		alertLanguage.innerHTML = "Debes seleccionar al menos un idioma";
 	}
 }
