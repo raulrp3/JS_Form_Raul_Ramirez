@@ -4,11 +4,6 @@
 	<meta charset="UTF-8">
 	<title>FORMULARIO</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-	<style>
-		.bg-primary{
-			background-color: red;
-		}
-	</style>
 </head>
 <body>
 	<div class="container mt-3">
@@ -16,24 +11,24 @@
 			<div class="col p-1 bg-light shadow p-3 mb-5 rounded">
 				<h3 class="text-center text-success border-bottom border-success p-1">FORMULARIO DE REGISTRO</h3>
 				<div class="col mt-2">
-					<form action="#" id="form">
+					<form action="#" id="mForm">
 						<div class="form-row">
 							<div class="col md-4">
-								<label for="textId">ID Usuario:</label>
+								<label for="textId">ID Usuario: <em class="text-muted">(Obligatorio)</em></label>
 								<input type="text" class="form-control mb-1 required" id="textId">
 								<div class="alert alert-danger text-center mt-1 required" id="alertId">
 									
 								</div>
 							</div>
 							<div class="col md-4">
-								<label for="textPassword">Contraseña:</label>
+								<label for="textPassword">Contraseña: <em class="text-muted">(Obligatorio)</em></label>
 								<input type="password" class="form-control mb-1 required" id="textPassword">
 								<div class="alert alert-danger text-center mt-1 required" id="alertPassword">
 									
 								</div>
 							</div>
 							<div class="col md-4">
-								<label for="">Nombre:</label>
+								<label for="">Nombre: <em class="text-muted">(Obligatorio)</em></label>
 								<input type="text" class="form-control mb-1 required" id="textName">
 								<div class="alert alert-danger text-center mt-1 required" id="alertName">
 									
@@ -46,7 +41,7 @@
 								<input type="text" class="form-control mb-1" id="textAddress">
 							</div>
 							<div class="col md-3">
-								<label for="selectCountry">País:</label>
+								<label for="selectCountry">País: <em class="text-muted">(Obligatorio)</em></label>
 								<select name="" id="selectCountry" class="custom-select mb-1">
 									<option selected="true">Selecciona un país...</option>
 									<option value="1">Alemania</option>
@@ -85,7 +80,7 @@
 						</div>
 						<div class="form-row">
 							<div class="col">
-								<label for="textEmail">Email:</label>
+								<label for="textEmail">Email: <em class="text-muted">(Obligatorio)</em></label>
 								<input type="text" class="form-control mb-1 required" id="textEmail">
 								<div class="alert alert-danger text-center mt-1 required" id="alertEmail">
 									
@@ -94,14 +89,14 @@
 						</div>
 						<div class="form-row">
 							<div class="col md-4">
-								<label for="textZip">Código ZIP:</label>
+								<label for="textZip">Código ZIP: <em class="text-muted">(Obligatorio)</em></label>
 								<input type="text" class="form-control mb-1 required" id="textZip">
 								<div class="alert alert-danger text-center mt-1 required" id="alertZip">
 									
 								</div>
 							</div>
-							<div class="col md-4">
-								<label for="" class="d-block">Sexo:</label>
+							<div class="col md-4 text-center">
+								<label for="" class="d-block">Sexo: <em class="text-muted">(Obligatorio)</em></label>
 								<div class="form-check form-check-inline mb-1">
 									<input type="radio" class="form-check-input" id="radioMale" name="sex" checked="true">
 									<label for="radioMale">Masculino</label>
@@ -114,8 +109,8 @@
 									
 								</div>
 							</div>
-							<dic class="col md-4">
-								<label for="" class="d-block">Idioma:</label>
+							<dic class="col md-4 text-center">
+								<label for="" class="d-block">Idioma: <em class="text-muted">(Obligatorio)</em></label>
 								<div class="form-check form-check-inline mb-1">
 									<input type="checkbox" class="form-check-input" id="checkEnglish">
 									<label for="checkEnglish">Inglés</label>
@@ -137,6 +132,7 @@
 							<div class="col">
 								<label for="textareaComments">Comentarios:</label>
 								<textarea name="" id="textareaComments" cols="30" rows="10" class="form-control"></textarea>
+								<p id="counter" class="text-success mt-1">0/240</p>
 							</div>
 						</div>
 						<div class="form-row mt-3">

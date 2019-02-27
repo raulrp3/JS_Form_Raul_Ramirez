@@ -1,3 +1,4 @@
+let validId,validPassword,validName,validCountry,validEmail,validZip,validLanguage,validComments;
 window.onload = function(){
 	hideAlerts();
 	let textId = document.getElementById("textId");
@@ -12,7 +13,19 @@ window.onload = function(){
 	textZip.addEventListener("blur",function(){validateZip()});
 	let btnSave = document.getElementById("btnSave");
 	btnSave.addEventListener("click",function(){submitForm()});
-}
+	btnSave.disabled = true;
+	let pCounter = document.getElementById("counter");
+	pCounter.style.display = "none";
+	let textareaComments = document.getElementById("textareaComments");
+	textareaComments.addEventListener("keyup",function(){counterChar()});
+	textareaComments.addEventListener("focus",function(){showCounter()})}
+	textareaComments.addEventListener("blur",function(){hideCounter()});
+	let selectCountry = document.getElementById("selectCountry");
+	selectCountry.addEventListener("blur",function(){validateCountry()});
+	let checkLanguage = document.querySelectorAll("input[type = 'checkbox']");
+	for(let i = 0;i < checkLanguage.length;i++){
+		checkLanguage[i].addEventListener("click",function(){validateLanguage()});
+	}
 
 function hideAlerts(){
 	let divAlert = document.getElementsByClassName("alert");
@@ -26,11 +39,15 @@ function validateId(){
 	let id = event.target.value;
 	if (!validateEmpty(alertId,id)){
 		addClass(event.target,"border-danger");
+		validId = false;
 	}else if(!validateLength(5,12,id,alertId)){
 		addClass(event.target,"border-danger");
+		validId = false;
 	}else{
 		hideAlert(alertId);
 		removeClass(event.target,"border-danger");
+		validId = true;
+		validForm();
 	}
 }
 
@@ -49,11 +66,15 @@ function validatePassword(){
 	let password = event.target.value;
 	if (!validateEmpty(alertPassword,password)){
 		addClass(event.target,"border-danger");
+		validPassword = false;
 	}else if(!validateLength(7,12,password,alertPassword)){
 		addClass(event.target,"border-danger");
+		validPassword = false;
 	}else{
 		hideAlert(alertPassword);
 		removeClass(event.target,"border-danger");
+		validPassword = true;
+		validForm();
 	}
 }
 
@@ -64,11 +85,15 @@ function validateName(){
 	const MESSAGE = "El nombre no puede contener números";
 	if (!validateEmpty(alertName,name)){
 		addClass(event.target,"border-danger");
+		validName = false;
 	}else if(!validateValue(name,expReg,alertName,MESSAGE)){
 		addClass(event.target,"border-danger");
+		validName = false;
 	}else{
 		hideAlert(alertName);
 		removeClass(event.target,"border-danger");
+		validName = true;
+		validForm();
 	}
 }
 
@@ -79,11 +104,15 @@ function validateEmail(){
 	const MESSAGE = "Email no válido";
 	if (!validateEmpty(alertEmail,email)){
 		addClass(event.target,"border-danger");
+		validEmail = false;
 	}else if(!validateValue(email,regExp,alertEmail,MESSAGE)){
 		addClass(event.target,"border-danger");
+		validEmail = false;
 	}else{
 		hideAlert(alertEmail);
 		removeClass(event.target,"border-danger");
+		validEmail = true;
+		validForm();
 	}
 }
 
@@ -94,44 +123,42 @@ function validateZip(){
 	const MESSAGE = "El código zip no puede contener letras";
 	if (!validateEmpty(alertZip,zip)){
 		addClass(event.target,"border-danger");
+		validZip = false;
 	}else if(!validateValue(zip,expReg,alertZip,MESSAGE)){
 		addClass(event.target,"border-danger");
+		validZip = false;
 	}else{
 		hideAlert(alertZip);
 		removeClass(event.target,"border-danger");
-	}
-}
-function submitForm(){
-	let selectCountry = document.getElementById("selectCountry");
-	let alertCountry = document.getElementById("alertCountry");
-	let alertLanguage = document.getElementById("alertLanguage");
-	if (validateCountry()){
-		hideAlert(alertCountry);
-		removeClass(selectCountry,"border-danger");
-	}
-	if (validateLanguage()){
-		hideAlert(alertLanguage);
+		validZip = true;
+		validForm();
 	}
 }
 
+function submitForm(){
+	let mForm = document.getElementById("mForm");
+	mForm.submit();
+}
+
 function validateCountry(){
-	let selectCountry = document.getElementById("selectCountry");
-	let countrySelected = selectCountry.options[selectCountry.selectedIndex].text;
+	let countrySelected = event.target.options[selectCountry.selectedIndex].text;
 	let alertCountry = document.getElementById("alertCountry");
-	let isValid = true;
 	if (countrySelected == "Selecciona un país..."){
 		addClass(selectCountry,"border-danger");
 		showAlert(alertCountry,"Debes seleccionar un país");
-		isValid = false;
+		validCountry = false;
+	}else{
+		hideAlert(alertCountry);
+		removeClass(event.target,"border-danger");
+		validCountry = true;
+		validForm();
 	}
-	return isValid;
 }
 
 function validateLanguage(){
 	let alertLanguage = document.getElementById("alertLanguage");
 	let checkLanguage = document.querySelectorAll("input[type = 'checkbox']");
 	let counter = 0;
-	let isValid = true;
 	for (let i = 0;i < checkLanguage.length;i++){
 		if (checkLanguage[i].checked){
 			counter++;
@@ -139,9 +166,12 @@ function validateLanguage(){
 	}
 	if (counter < 1){
 		showAlert(alertLanguage,"Debes seleccionar al menos un idioma")
-		isValid = false;
+		validLanguage = false;
+	}else{
+		hideAlert(alertLanguage);
+		validLanguage = true;
+		validForm();
 	}
-	return isValid;
 }
 
 function validateLength(minLength,maxLength,value,alertError){
@@ -178,5 +208,36 @@ function hideAlert(alertError){
 function showAlert(alertError,message){
 	alertError.style.display = "block";
 	alertError.innerHTML = message;
+}
+
+function counterChar(){
+	let charLength = event.target.value.length;
+	const MAXLENGTH = 240;
+	let pCounter = document.getElementById("counter");
+	pCounter.innerHTML = charLength + "/" + MAXLENGTH;
+	if (charLength > MAXLENGTH){
+		addClass(pCounter,"text-danger");
+		validComments = false;
+	}else{
+		removeClass(pCounter,"text-danger");
+		validComments = true;
+	}
+}
+
+function showCounter(){
+	let pCounter = document.getElementById("counter");
+	pCounter.style.display = "block";
+}
+
+function hideCounter(){
+	let pCounter = document.getElementById("counter");
+	pCounter.style.display = "none";
+}
+
+function validForm(){
+	let btnSave = document.getElementById("btnSave");
+	if (validId && validPassword && validName && validCountry && validEmail && validZip && validLanguage){
+		btnSave.disabled = false;
+	}
 }
 
